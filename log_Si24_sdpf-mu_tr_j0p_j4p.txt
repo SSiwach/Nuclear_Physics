@@ -1,0 +1,111 @@
+OpenMP  # of threads= 32
+&INPUT
+ FN_INT="sdpf-mu.snt                                                                                                                                                                                                                                                     ",
+ HW_TYPE=          2,
+ FN_PTN_L="Si24_sdpf-mu_p.ptn                                                                                                                                                                                                                                              ",
+ FN_LOAD_WAVE_L="Si24_sdpf-mu_j0p.wav                                                                                                                                                                                                                                            ",
+ FN_PTN_R="Si24_sdpf-mu_p.ptn                                                                                                                                                                                                                                              ",
+ FN_LOAD_WAVE_R="Si24_sdpf-mu_j4p.wav                                                                                                                                                                                                                                            ",
+ EFF_CHARGE=  1.3500000000000001     , 0.34999999999999998     ,
+ GL=  1.0000000000000000     ,  0.0000000000000000     ,
+ GS=  3.9100000000000001     , -2.6779999999999999     ,
+ E1_CHARGE= 2*0.0000000000000000       ,
+ MASS=          0,
+ IS_FERMI_TRN=F,
+ IS_OBTD=F,
+ NPROCS_REDUCE=          1,
+ NV_SHIFT=          1,
+ /
+compile conf. kwf, kdim, kmbit =  8  8  8
+
+fn_load_wave_l = Si24_sdpf-mu_j0p.wav
+fn_load_wave_r = Si24_sdpf-mu_j4p.wav
+
+ proton  core  8, orbit: 0s_1/2 0p_3/2 0p_1/2
+ neutron core  8, orbit: 0s_1/2 0p_3/2 0p_1/2
+
+ model space
+   k,  n,  l,  j, tz,  p, 2n+l
+   1   0   2   5  -1   1   2   p 0d_5/2
+   2   0   2   3  -1   1   2   p 0d_3/2
+   3   1   0   1  -1   1   2   p 1s_1/2
+   4   0   3   7  -1  -1   3   p 0f_7/2
+   5   0   3   5  -1  -1   3   p 0f_5/2
+   6   1   1   3  -1  -1   3   p 1p_3/2
+   7   1   1   1  -1  -1   3   p 1p_1/2
+   8   0   2   5   1   1   2   n 0d_5/2
+   9   0   2   3   1   1   2   n 0d_3/2
+  10   1   0   1   1   1   2   n 1s_1/2
+  11   0   3   7   1  -1   3   n 0f_7/2
+  12   0   3   5   1  -1   3   n 0f_5/2
+  13   1   1   3   1  -1   3   n 1p_3/2
+  14   1   1   1   1  -1   3   n 1p_1/2
+
+set left partition_file=Si24_sdpf-mu_p.ptn
+Max 2*J =  32
+
+pn= 1   # of mbits=          92218
+pn= 2   # of mbits=            496
+
+init_partition  time it took was:     0.451 sec
+
+Memory usage in partition        1.54 MB
+ partition distribution based on counted dim.           1
+ partition distribution based on counted dim.           1
+
+loadbalancing cost max/min     1039582.00000     1039582.00000
+
+set right partition_file=Si24_sdpf-mu_p.ptn
+Max 2*J =  32
+
+pn= 1   # of mbits=          84734
+pn= 2   # of mbits=            494
+
+init_partition  time it took was:     0.560 sec
+
+Memory usage in partition        1.45 MB
+ partition distribution based on counted dim.           1
+ partition distribution based on counted dim.           1
+
+loadbalancing cost max/min      917549.00000      917549.00000
+
+N. of valence protons and neutrons =   6  2   mass= 24   n,z-core     8    8
+TBME mass dependence (mass/  42)^ -0.30000000
+ hbar_omega: set by 45A^(-1/3)-25A^(-2/3) MeV
+hbar_omega =   12.59594 MeV;     b =    1.81450 fm
+Memory for left global Lanczos vector:     0.008 GB
+Memory / process is:     0.008 GB 
+
+Memory for right global Lanczos vector:     0.007 GB
+Memory / process is:     0.007 GB 
+
+Total Memory / process is:     0.029 GB 
+
+
+max. working area for pn-int.:      0.003GB           2000
+maximum threshold dim. for working area     250
+split partition threshold dim.            250  nsplt_ptn 128
+ # of split partitions      280 /        10834
+wave functions load from Si24_sdpf-mu_j0p.wav # of wf    2
+time I/O      0.015 GB  /      0.005 sec. =      2.83 GB/s
+
+wave functions load from Si24_sdpf-mu_j4p.wav # of wf    2
+time I/O      0.014 GB  /      0.006 sec. =      2.36 GB/s
+
+left  Z,N,A,M,prty:   14  10  24   0   1
+right Z,N,A,M,prty:   14  10  24   4   1
+
+ E2 transition  e^2 fm^4  eff_charge=  1.3500  0.3500 parity  1  1
+ 2xJf      Ef      2xJi     Ei       Ex       Mred.    B(EM )->   B(EM)<-   Mom.
+ 0(   1)  -75.759 4(   1)  -73.402   2.357   13.9772  195.3630   39.0726    0.0000
+ 0(   1)  -75.759 4(   2)  -71.910   3.848    7.6421   58.4020   11.6804    0.0000
+ 0(   2)  -71.151 4(   1)  -73.402  -2.250   -2.6385    6.9619    1.3924    0.0000
+ 0(   2)  -71.151 4(   2)  -71.910  -0.759    0.7421    0.5508    0.1102    0.0000
+
+
+total elapsed time:     1.228
+
+
+ maximum num of allocated lanczos vec.           5
+ present num of allocated lanczos vec.           4
+
